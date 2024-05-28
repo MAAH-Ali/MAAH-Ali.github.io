@@ -9,12 +9,22 @@
       <title>Maah</title>
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/style.css">
+      <script src="https://www.paypal.com/sdk/js?client-id=AaALqjD8VZ0BohJZa6Icehaf4D1I1t4SzaqIgjVyjlxweW_8H--SA2_4drBvVzkT32NSU_IItmPzrc1k"></script>
+      <style>
+        #paypal-button-container {
+            margin: auto;
+  width: 40%;
+  border: 3px solid rgba(0, 128, 0, 0);
+  padding: 10px;
+        }
+
+
+     </style>
    </head>
    <body class="main-layout inner_page">
       <div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#"/></div>
       </div>
-
       <header>
          <div class="header">
             <div class="container-fluid">
@@ -47,65 +57,41 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="contact.html">Contact Us</a>
                               </li>
+
                            </ul>
+
                         </div>
                      </nav>
                   </div>
                   <div class="col-md-2">
-                     <br><br>
+                    <br><br>
                   </div>
                </div>
             </div>
          </div>
       </header>
- 
-      <div class="quality">
+      <div class="contact">
          <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage text_align_center">
-                     <h2>Latest Videos</h2>
-                     </p>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                  <div class="quality-box ">
-                     <a href="Payment.html"><figure><img src="images/quality1.png" alt="#"/></figure></a>
-                  </div>
-                 <center><h3>i've tried Airpods resale | 7-Day Challange</h3></center>
-
-                  <div class="col-sm-12">
-                     <a class="read_more" href="https://youtube.com">Watch now</a>
-
-                  </div> <br><br>
-               </div>
-               <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                  <div class="quality-box ">
-                     <a href="Payment.html"><figure><img src="images/quality2.png" alt="#"/></figure></a>
-                  </div>
-                 <center><h3>I tried making money using 3d printers | 7-Day Challange</h3></center>
-
-                  <div class="col-sm-12">
-                     <a class="read_more" href="https://youtube.com">Watch now</a>
-
-                  </div> <br><br>
-               </div>
-               <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                  <div class="quality-box ">
-                     <a href="Payment.html"><figure><img src="images/quality3.png" alt="#"/></figure></a>
-                  </div>
-                 <center><h3>I Tried SMMA for 15-Days</h3></center>
-
-                  <div class="col-sm-12">
-                     <a class="read_more" href="https://youtube.com">Watch now</a>
-
-                  </div> <br><br>
-               </div>
-            </div>
+             <div class="row">
+                 <div class="col-md-12">
+                     <div class="titlepage text_align_center">
+                         <h2>Subscription</h2>
+                     </div>
+                 </div>
+                 <div class="col-md-12">
+                     <div class="titlepage text_align_center">
+                         <h4>This subscription includes tutorials that are exclusively available to members. It also provides the source scripts for the projects we do on YouTube. By subscribing, you will support me significantly. Join now for only $10 and claim your place!</h4>
+                     </div>
+                     <center><video src="Videos/VIDEO.mp4" width="80%" controls>
+                         <source src="BACKUP" type="video/mp4">
+                     </video></center>
+                 </div>
+             </div>
          </div>
-      </div>
+     </div>
+     <div id="paypal-button-container"></div>
+
+      <br><br><br><br><br>      
 
       <footer>
          <div class="footer">
@@ -120,6 +106,30 @@
             </div>
          </div>
       </footer>
+
+
+      <script>
+         paypal.Buttons({
+             createOrder: function(data, actions) {
+                 return actions.order.create({
+                     purchase_units: [{
+                         amount: {
+                             currency_code: 'USD',
+                             value: '10'
+                         },
+                         description: 'Subscription'
+                     }]
+                 });
+             },
+             onApprove: function(data, actions) {
+                 return actions.order.capture().then(function(details) {
+                     alert('Transaction completed by ' + details.payer.name.given_name);
+                     window.location.href = 'succeed.html';
+
+                 });
+             }
+         }).render('#paypal-button-container'); 
+     </script>
 
       <script src="js/jquery.min.js"></script>
       <script src="js/custom.js"></script>
