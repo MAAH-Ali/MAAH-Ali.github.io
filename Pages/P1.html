@@ -17,6 +17,15 @@
   border: 3px solid rgba(0, 128, 0, 0);
   padding: 10px;
         }
+ .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .video-container video {
+            width: 30%;
+        }
 
 
      </style>
@@ -70,24 +79,16 @@
             </div>
          </div>
       </header>
-      <center><video src="../Videos/TikVid1.mp4" width="30%" controls>
-                         <source src="BACKUP" type="video/mp4">
-      </video></center>
-       <center><video src="../Videos/TikVid_2.mp4" width="30%" controls>
-                         <source src="BACKUP" type="video/mp4">
-      </video></center>
-       <center><video src="../Videos/TikVid_3.mp4" width="30%" controls>
-                         <source src="BACKUP" type="video/mp4">
-      </video></center>
-       <center><video src="../Videos/TikVid_4.mp4" width="30%" controls>
-                         <source src="BACKUP" type="video/mp4">
-      </video></center>
-       <center><video src="../Videos/TikVid_5.mp4" width="30%" controls>
-                         <source src="BACKUP" type="video/mp4">
-      </video></center>
-       <center><video src="../Videos/TikVid_6.mp4" width="30%" controls>
-                         <source src="BACKUP" type="video/mp4">
-      </video></center>
+     <div class="video-container">
+        <video src="../Videos/TikVid1.mp4" controls></video>
+        <video src="../Videos/TikVid_2.mp4" controls></video>
+        <video src="../Videos/TikVid_3.mp4" controls></video>
+        <video src="../Videos/TikVid_4.mp4" controls></video>
+        <video src="../Videos/TikVid_5.mp4" controls></video>
+        <video src="../Videos/TikVid_6.mp4" controls></video>
+        <video src="../Videos/TikVid_7.mp4" controls></video>
+    </div>
+
       <br><br><br><br><br><br><br>
       <hr>
       <div class="contact">
